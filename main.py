@@ -32,7 +32,7 @@ else:
     # JSON data for posting
     JSON_Data={"username":"Photo Of The Day","avatar_url":NASA_Photo_URL,"embeds":[{'title':NASA_Title,'color':5964804,"description":f"Photo By: {NASA_Artist}\nThe ISS is currently at:\n**{Latitude}**, **{Longitude}**","image":{"url": NASA_Photo_URL},"footer":{"text":f"Made by NeoGeekJr V{Version}","icon_url": "https://neogeekjr.com/src/pfp.png"}}]}
     # Check for update before posting
-    if float(get('https://github.com/neogeekjr/NASA-Webhook/UNKNOWNYET').text)>float(Version):JSON_Data['content']="New Version Out Please Update [here](https://github.com/neogeekjr/NASA-Webhook)"
+    if float(get('https://raw.githubusercontent.com/neogeekjr/NASA-Webhook/main/version.txt').text)>float(Version):JSON_Data['content']="New Version Out Please Update [here](https://github.com/neogeekjr/NASA-Webhook)"
 
 
 post(Webhook_URL,json=JSON_Data)
